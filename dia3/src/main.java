@@ -62,6 +62,41 @@ public class main {
         """);
     }
 
+    static void fuerte(String fuerte){
+        int sumaFactorial = 0;
+        for (int i = 0; i < fuerte.length(); i++) {
+            
+            int factorial23 = Character.getNumericValue(fuerte.charAt(i));
+            for (int x = Character.getNumericValue(fuerte.charAt(i))-1; x > 0; x--) {
+                factorial23 = factorial23*x;
+            }
+            sumaFactorial+=factorial23;
+        }
+        if (Integer.parseInt(fuerte) == sumaFactorial) {
+            System.out.println("es un numero fuerte");
+        }
+        else{
+            System.out.println("no es un numero fuerte");
+        }
+    }
+    static String fuerte2(String fuerte){
+        int sumaFactorial = 0;
+        for (int i = 0; i < fuerte.length(); i++) {
+            
+            int factorial23 = Character.getNumericValue(fuerte.charAt(i));
+            for (int x = Character.getNumericValue(fuerte.charAt(i))-1; x > 0; x--) {
+                factorial23 = factorial23*x;
+            }
+            sumaFactorial+=factorial23;
+        }
+        if (Integer.parseInt(fuerte) == sumaFactorial) {
+            return fuerte;
+        }
+        else{
+            return null;
+        }
+    }
+
     public static void main(String[] args) {
         
         Scanner scan = new Scanner(System.in);
@@ -296,32 +331,210 @@ public class main {
                     System.out.println("numero mayor = "+numero_mayor+"  numero menor = "+numero_menor);
                     scan.nextLine();
                     break;
-                case "21":
-                    
+                    case "21":
+                    int total_9 = 0;
+                    for (int i = 100; i <= 200; i++) {
+                        if (i%9 == 0) {
+                            System.out.println(i);
+                            total_9 = total_9 + i;
+                        }
+                    }
+                    System.out.println(total_9);
+                    scan.nextLine();
                     break;
                 case "22":
-                
+                    System.out.print("Ingrese un número binario: ");
+                    String binario22 = scan.nextLine();
+                    int resultado22 = 0;
+                    for (int i = 0; i < binario22.length(); i++) {
+                        int r22 = 1;
+                        for (int j = i; j<binario22.length()-1; j++) {
+                            r22*=2;
+                        }
+                        resultado22 += Character.getNumericValue(binario22.charAt(i))*r22;
+                    }
+                    System.out.println(resultado22);
+                    scan.nextLine();
                     break;
                 case "23":
-                
+                    System.out.print("Ingrese un número: ");
+                    String fuerte = scan.nextLine();
+                    fuerte(fuerte);
+                    scan.nextLine();
                     break;
                 case "24":
-                
+                    System.out.print("Ingrese un número: ");
+                    String h24 = scan.nextLine();
+                    System.out.println(Integer.parseInt(h24,16));
+                    scan.nextLine();
                     break;
                 case "25":
-                
+                    System.out.print("Ingrese un número: ");
+                    String h25 = scan.nextLine();
+                    int d25 = Integer.parseInt(h25,16);
+                    System.out.println(Integer.toOctalString(d25));
+                    scan.nextLine();
                     break;
                 case "26":
-                
+                    System.out.print("Ingrese un número: ");
+                    String h26 = scan.nextLine();
+                    int b25 = Integer.parseInt(h26,16);
+                    System.out.println(Integer.toBinaryString(b25));
+                    scan.nextLine();
                     break;
                 case "27":
-                
+                    System.out.print("Ingrese un número: ");
+                    int d27 = scan.nextInt();
+                    scan.nextLine();
+                    System.out.println(Integer.toHexString(d27).toUpperCase());
+                    scan.nextLine();
                     break;
                 case "28":
-                
+                    System.out.print("Ingrese un número: ");
+                    int d28 = scan.nextInt();
+                    scan.nextLine();
+                    System.out.println(Integer.toOctalString(d28));
+                    scan.nextLine();
                     break;
                 case "29":
+                    System.out.print("Ingrese un número: ");
+                    int d29 = scan.nextInt();
+                    scan.nextLine();
+                    System.out.println(Integer.toBinaryString(d29));
+                    scan.nextLine();
+                    break;
+                case "30":
+                    System.out.print("Ingrese un número: ");
+                    String b30 = scan.nextLine();
+                    String o30 = Integer.toOctalString(Integer.parseInt(b30,2));
+                    System.out.println(o30);
+                    scan.nextLine();
+                    break;
+                case "31":
+                    System.out.print("Ingrese un número: ");
+                    String b31 = scan.nextLine();
+                    System.out.println(Integer.parseInt(b31,2));
+                    scan.nextLine();
+                    break;
+                case "32":
+                    System.out.print("Ingrese un número: ");
+                    String b32 = scan.nextLine();
+                    String hex32 = Integer.toHexString(Integer.parseInt(b32,2)).toUpperCase();
+                    System.out.println(hex32);
+                    scan.nextLine();
+                    break;
+                case "33":
+                    System.out.print("Ingrese un número: ");
+                    String o33 = scan.nextLine();
+                    String b33 = Integer.toBinaryString(Integer.parseInt(o33,8));
+                    System.out.println(b33);
+                    scan.nextLine();
+                    break;
+                case "34":
+                    System.out.print("Ingrese un número: ");
+                    String o34 = scan.nextLine();
+                    System.out.println(Integer.parseInt(o34,8));
+                    scan.nextLine();
+                    break;
+                case "35":
+                    System.out.print("Ingrese un número: ");
+                    String o35 = scan.nextLine();
+                    String hex35 = Integer.toHexString(Integer.parseInt(o35,8)).toUpperCase();
+                    System.out.println(hex35);
+                    scan.nextLine();
+                    break;
+                case "36":
+                    System.out.print("Ingrese un número: ");
+                    int n36 = scan.nextInt();
+                    scan.nextLine();
+                    System.out.println("complemento a1 = "+ ~n36);
+                    scan.nextLine();
+                    break;
+                case "37":
+                    System.out.print("Ingrese un número: ");
+                    String b37 = scan.nextLine();
+                    int n37 = Integer.parseInt(b37,2);
+                    System.out.println("complemento a2 = "+ Integer.toBinaryString(~n37+1));
+                    scan.nextLine();
+                    break;
+                case "38":
+                    System.out.print("Ingrese un número: ");
+                    int n38 = scan.nextInt();
+                    scan.nextLine();
+                    int a=0;
+                    int b=1;
+                    int c = 0;
+                    for (int i = 0; i < n38; i++) {
+                        c=a+b;
+                        System.out.println(a);
+                        a=b;
+                        b=c;
+                    }
+                    scan.nextLine();
+                    break;
+                case "40":
+                    for (int i = 1; i <= 100000; i++) {
+
+                        if (fuerte2(Integer.toString(i))!=null) {
+                            System.out.println(i);
+                        }
+                    }
+                    scan.nextLine();
+                    break;
+                case "41":
+                    
+                    for (int i = 0; i < 10000; i++) {
+                        int suma_41 = 0;
+                        for (int j = 1; j < i; j++) {
+                            if (i%j == 0) {
+                                suma_41+=j;
+                            }
+                        }
+                        if (suma_41==i) {
+                            System.out.println(i);
+                        }
+                    }
+                    scan.nextLine();
+                    break;
+                case "42":
+                    System.out.print("Ingrese un número: ");
+                    int n42 = scan.nextInt();
+                    scan.nextLine();
+                    int suma_42 = 0;
+                    for (int j = 1; j < n42; j++) {
+                        if (n42%j == 0) {
+                            suma_42+=j;
+                        }
+                    }
+                    if (suma_42==n42) {
+                        System.out.println("es un numero perfecto");
+                    }
+                    else{
+                        System.out.println("no es un numero perfecto");
+                    }
+                    scan.nextLine();
+                    break;
+                case "43":
+                break;
+                case "44":
                 
+                    System.out.print("Ingrese un número: ");
+                    String n44 = scan.nextLine();
+                    int suma_44 = 0;
+                    for (int i = 0; i < n44.length(); i++) {
+                        int potencia44 = 1;
+                        for (int j = 1; j < n44.length()+1; j++) {
+                            potencia44*=n44.charAt(i)-'0';
+                        }
+                        suma_44+=potencia44;
+                    }
+                    if (suma_44 == Integer.parseInt(n44)) {
+                        System.out.println("el numero es astro");
+                    }else System.out.println("el numero no es astro");
+                    scan.nextLine();
+                    break;
+                case "45":
+                    
                     break;
                 case "46":
                     bucle=false;
