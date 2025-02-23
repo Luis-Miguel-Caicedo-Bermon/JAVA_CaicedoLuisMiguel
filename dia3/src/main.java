@@ -515,7 +515,22 @@ public class main {
                     scan.nextLine();
                     break;
                 case "43":
-                break;
+                    for (int x = 1; x <= 1000; x++) {
+                        String n43 = Integer.toString(x);
+                        int suma_44 = 0;
+                        for (int i = 0; i < n43.length(); i++) {
+                            int potencia44 = 1;
+                            for (int j = 1; j < n43.length()+1; j++) {
+                                potencia44*=n43.charAt(i)-'0';
+                            }
+                            suma_44+=potencia44;
+                        }
+                        if (suma_44 == Integer.parseInt(n43)) {
+                            System.out.println(x);
+                        }
+                    }
+                    scan.nextLine();
+                    break;
                 case "44":
                 
                     System.out.print("Ingrese un número: ");
