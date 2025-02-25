@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Producto {
     
@@ -47,5 +49,56 @@ public class Producto {
     }
     public double getPrecio(){
         return precio;
+    }
+    public void actualizarStock(int cantidad){
+        if (cantidad+this.cantidad>=0) {
+            this.cantidad+=cantidad;
+        }
+        else{
+            System.out.println("cantidad no valida");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" + "codigo=" + codigo + ", nombre=" + nombre + ", cantidad=" + cantidad + ", precio=" + precio + '}';
+    }
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        ArrayList<Producto> lista_producto = new ArrayList<>();
+        lista_producto.add(new Producto("1234","Celular",12,1000));
+        lista_producto.add(new Producto("5678","Mouse",7,100));
+        lista_producto.add(new Producto("9101","Teclado",11, 120));
+
+        System.out.println("");
+        for (Producto p : lista_producto) {System.out.println(p.toString());}
+        System.out.println("");
+
+        System.out.println("cambiar codigo del primer producto");
+        lista_producto.get(0).setCodigo("1111");
+        for (Producto p : lista_producto) {System.out.println(p.toString());}
+        System.out.println("");
+
+        
+        System.out.println("cambiar el nombre del segundo producto");
+        lista_producto.get(1).setNombre("audifonos");
+        for (Producto p : lista_producto) {System.out.println(p.toString());}
+        System.out.println("");
+
+        System.out.println("agregar teclados ");
+        lista_producto.get(2).actualizarStock(5);
+        for (Producto p : lista_producto) {System.out.println(p.toString());}
+        System.out.println("");
+
+        System.out.println("restar cantidad invalida de celulares");
+        lista_producto.get(0).actualizarStock(-15);
+        for (Producto p : lista_producto) {System.out.println(p.toString());}
+        System.out.println("");
+
+        
+        System.out.println("cambiar precio de teclado");
+        lista_producto.get(2).setPrecio(150);
+        for (Producto p : lista_producto) {System.out.println(p.toString());}
+        System.out.println("");
     }
 }

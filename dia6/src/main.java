@@ -15,7 +15,6 @@ public class main {
         
         
         
-        //ejercicio 2
         
     }
     
