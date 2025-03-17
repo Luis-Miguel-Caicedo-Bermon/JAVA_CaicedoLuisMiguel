@@ -1,2 +1,2 @@
-P,1,"luis",20
-PR,2,"Manzana",2000
+PR,2,pera,1500.0
+PR,4,Manzana,2000.0
