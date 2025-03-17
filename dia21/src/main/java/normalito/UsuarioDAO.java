@@ -69,12 +69,56 @@ public class UsuarioDAO {
                 System.out.println("Usuario actualizado exitosamente");
             }
             else {
-                System.out.println("No se pudo actualizar el usuario co el id "+id);
+                System.out.println("No se pudo actualizar el usuario con el id "+id);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    // eliminar
+
+    public void eliminarUsuarios(int id){
+        String sql = "delete from usuarios where id=?";
+        try {
+            Connection conexionInterna = conectar();
+            PreparedStatement solicitud = conexionInterna.prepareStatement(sql);
+
+            solicitud.setInt(1,id);
+
+            int filas = solicitud.executeUpdate();
+            if (filas > 0){
+                System.out.println("Usuario eliminado exitosamente");
+            }
+            else {
+                System.out.println("No se pudo eliminar el usuario con el id "+id);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String buscarUsuarios(int id){
+        String sql = "select * from usuarios where id=?";
+        String usuario = null;
+        try {
+            Connection conexionInterna = conectar();
+            PreparedStatement solicitud = conexionInterna.prepareStatement(sql);
+
+            solicitud.setInt(1,id);
+
+            ResultSet resultado = solicitud.executeQuery();
+            resultado.next();
+
+            usuario = resultado.getInt("id")+
+                    " - "+resultado.getString("nombre")+" - "+
+                    resultado.getString("email");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return usuario;
     }
 
 }
